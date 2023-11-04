@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean playerOneActive;
     private TextView playerOneScore, playerTwoScore, playerStatus;
     private ImageButton[] buttons = new ImageButton[9];
-    private Button reset, playagain;
+    private Button reset, playagain, rules;
     boolean isButtonPressed = false;
     int[] gameState = {2,2,2,2,2,2,2,2,2};
     int[][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6},
@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         playerOneScore = findViewById(R.id.score_Player1);
         playerTwoScore = findViewById(R.id.score_Player2);
-        playerStatus = findViewById(R.id.textStatus);
+//        playerStatus = findViewById(R.id.textStatus);
         reset = findViewById(R.id.btn_reset);
         playagain = findViewById(R.id.btn_play_again);
+        rules = findViewById(R.id.btn_rules);
         buttons[0] = findViewById(R.id.btn0);
         buttons[1] = findViewById(R.id.btn1);
         buttons[2] = findViewById(R.id.btn2);
@@ -61,7 +62,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerTwoScoreCount = 0;
         playerOneActive = true;
         rounds = 0;
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create and configure the alert dialog
+                ShowRulesAlert();
+            }
+        });
     }
+
 
     @Override
     public void onClick(View view)
@@ -102,20 +111,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 playerOneScoreCount++;
                 updatePlayerScore();
-                playerStatus.setText("Samsung has won");
-                AlertFunction("Samsung");
+//                playerStatus.setText("Samsung has won");
+                ShowWinnerAlert("Samsung");
             }
             else
             {
                 playerTwoScoreCount++;
                 updatePlayerScore();
-                playerStatus.setText("Apple has won");
-                AlertFunction("Apple");
+//                playerStatus.setText("Apple has won");
+                ShowWinnerAlert("Apple");
             }
         }
         else if(rounds==9)
         {
-            playerStatus.setText("No Winner");
+//            playerStatus.setText("No Winner");
+            ShowWinnerAlert("Friendship");
         }
         else
         {
@@ -149,6 +159,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create and configure the alert dialog
+                ShowRulesAlert();
+            }
+        });
+
     }
 
     private boolean checkWinner()
@@ -174,10 +193,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             gameState[i] = 2;
         }
-        playerStatus.setText("Status");
+//        playerStatus.setText("Status");
     }
 
-    private void AlertFunction(String winner)
+    private void ShowWinnerAlert(String winner)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("We have winner")
@@ -186,7 +205,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
+                    }
+                });
 
+        // Show the alert dialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void ShowRulesAlert()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Rules")
+                .setMessage("There will be some rules. ...")
+                .setPositiveButton("Let's go!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // You can add code here to handle the OK button click.
                     }
                 });
 

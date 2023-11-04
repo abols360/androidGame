@@ -1,379 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-
     tools:context=".MainActivity"
-
     android:layout_margin="20dp"
-
     android:background ="@drawable/bg">
 
     <TextView
-
         android:id="@+id/texttitle"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:text="Samsung vs Apple"
-
         android:layout_centerHorizontal="true"
-
         android:textSize="48sp"
-
         android:textStyle="bold"
-
         android:textColor="#660000"
-
-        android:fontFamily="cursive"
-
-
-        />
+        android:fontFamily="cursive" />
 
     <RelativeLayout
-
         android:id="@+id/relative_layout"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_centerHorizontal="true"
-
         android:layout_below="@+id/texttitle"
-
-
         android:layout_marginTop="20dp"
-
         android:layout_marginBottom="20dp">
 
-
-
-
-
         <TextView
-
             android:id="@+id/text_player1"
-
             android:layout_width="200dp"
-
             android:layout_height="wrap_content"
-
             android:fontFamily="cursive"
-
             android:text="Samsung points"
-
             android:textAlignment="center"
-
             android:textColor="@color/black"
-
             android:textSize="26dp"
-
             android:textStyle="bold" />
 
         <TextView
-
             android:id="@+id/text_player2"
-
             android:layout_width="200dp"
-
             android:layout_height="wrap_content"
-
             android:fontFamily="cursive"
-
             android:text="Apple points"
-
             android:textSize="26dp"
-
             android:textStyle="bold"
-
             android:textColor="@color/black"
-
             android:textAlignment="center"
-
-            android:layout_toRightOf="@id/text_player1"
-
-            />
+            android:layout_toRightOf="@id/text_player1" />
 
 
         <TextView
-
             android:id="@+id/score_Player1"
-
             android:layout_width="200dp"
-
             android:layout_height="wrap_content"
-
             android:text="0"
-
             android:textAlignment="center"
-
             android:fontFamily="cursive"
-
             android:textColor="@color/black"
-
             android:textSize="26dp"
-
             android:textStyle="bold"
-
             android:layout_below="@id/text_player1"/>
 
-
-
         <TextView
-
             android:id="@+id/score_Player2"
-
             android:layout_width="200dp"
-
             android:layout_height="wrap_content"
-
             android:text="0"
-
             android:textAlignment="center"
-
             android:textColor="@color/black"
-
             android:textSize="26dp"
-
             android:fontFamily="cursive"
-
             android:textStyle="bold"
-
             android:layout_below="@id/text_player2"
-
             android:layout_toRightOf="@id/score_Player1"/>
-
     </RelativeLayout>
 
-
-
     <LinearLayout
-
         android:id="@+id/layout_linear"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:orientation="vertical"
-
         android:layout_centerHorizontal="true"
-
-        android:layout_below="@id/relative_layout"
-
-
-        >
+        android:layout_below="@id/relative_layout">
 
         <LinearLayout
-
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
-
             android:orientation="horizontal">
 
-
             <ImageButton
-
                 android:id="@+id/btn0"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
 
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="samsung.png" />-->
-
             <ImageButton
-
                 android:id="@+id/btn1"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
-
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
-
                 android:id="@+id/btn2"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
-
-
-
         </LinearLayout>
 
         <LinearLayout
-
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
-
             android:orientation="horizontal">
 
             <ImageButton
-
                 android:id="@+id/btn3"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
-
                 android:id="@+id/btn4"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:layout_marginHorizontal="5dp"
-
-
-                android:background="@drawable/custom_button"
-                />
+                android:background="@drawable/custom_button"/>
 
             <ImageButton
-
                 android:id="@+id/btn5"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
 
         </LinearLayout>
 
         <LinearLayout
-
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
-
-            android:orientation="horizontal"
-
-            >
+            android:orientation="horizontal">
 
             <ImageButton
-
                 android:id="@+id/btn6"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
-
                 android:id="@+id/btn7"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
-
                 android:id="@+id/btn8"
-
                 android:layout_width="75dp"
-
                 android:layout_height="75dp"
-
                 android:textSize="26dp"
-
                 android:background="@drawable/custom_button"
-
                 android:layout_marginHorizontal="5dp" />
-
-
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
-
         android:id="@+id/textStatus"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
-        android:layout_below="@id/layout_linear"
-
-        android:layout_marginTop="20dp"
-
-        android:layout_centerHorizontal="true"
-
-        android:textSize="26dp"
-
-
-
-        android:text="Status"
-
-        android:textColor="@color/black"/>
+        android:layout_below="@id/layout_linear" />
 
     <Button
-
         android:id="@+id/btn_play_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -384,25 +198,30 @@
         android:backgroundTint="#ffbb00"/>
 
     <Button
-
         android:id="@+id/btn_reset"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_below="@id/btn_play_again"
-
         android:layout_centerHorizontal="true"
-
         android:text="Reset total score"
-
         android:textSize="26dp"
-
         android:backgroundTint="#bb5C5C"
-
         />
 
+    <Button
+
+        android:id="@+id/btn_rules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textStatus"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="97dp"
+        android:backgroundTint="#ffaaee"
+        android:text="Rules"
+        android:textSize="26dp" />
 
 
 </RelativeLayout>
