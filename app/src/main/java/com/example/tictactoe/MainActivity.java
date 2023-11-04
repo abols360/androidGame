@@ -1,7 +1,9 @@
 package com.example.tictactoe;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 
@@ -101,12 +103,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 playerOneScoreCount++;
                 updatePlayerScore();
                 playerStatus.setText("Samsung has won");
+                AlertFunction("Samsung");
             }
             else
             {
                 playerTwoScoreCount++;
                 updatePlayerScore();
                 playerStatus.setText("Apple has won");
+                AlertFunction("Apple");
             }
         }
         else if(rounds==9)
@@ -171,8 +175,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             gameState[i] = 2;
         }
         playerStatus.setText("Status");
+    }
 
+    private void AlertFunction(String winner)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("We have winner")
+                .setMessage(winner + " has won.")
+                .setPositiveButton("Cool!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
 
+                    }
+                });
+
+        // Show the alert dialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     private void updatePlayerScore()
