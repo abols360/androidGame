@@ -85,8 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-
-
         playerOneScoreCount = 0;
 
         playerTwoScoreCount = 0;
@@ -95,10 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         rounds = 0;
 
-
-
     }
-
 
 
     @Override
@@ -133,9 +128,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         {
 
-            ((Button)view).setText("X");
+//            ((Button)view).setText("X");
+            ((Button)view).setBackgroundResource(R.drawable.samsung);
+           // ((Button)view).setBackgroundColor(Color.parseColor("#000000"));
 
-            ((Button)view).setTextColor(Color.parseColor("#ffc34a"));
+           // ((Button)view).set;
+
+            //((Button)view).setTextColor(Color.parseColor("#ffc34a"));
 
             gameState[gameStatePointer] = 0;
 
@@ -145,9 +144,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         {
 
-            ((Button)view).setText("O");
+            //((Button)view).setText("O");
 
-            ((Button)view).setTextColor(Color.parseColor("#70fc3a"));
+            //((Button)view).setText("O");
+            ((Button)view).setBackgroundResource(R.drawable.apple);
+            //((Button)view).setColo
+           // ((Button)view).setBackgroundColor(Color.parseColor("#000000"));
+            //((Button)view).set(R.drawable.apple);
+            //((Button)view).setTextColor(Color.parseColor("#70fc3a"));
 
             gameState[gameStatePointer] = 1;
 
@@ -232,19 +236,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 playAgain();
 
             }
-
         });
-
-
-
-
-
     }
 
-
-
     private boolean checkWinner()
-
     {
 
         boolean winnerResults  = false;

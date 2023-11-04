@@ -102,8 +102,6 @@
 
             android:textAlignment="center"
 
-
-
             android:layout_toRightOf="@id/text_player1"
 
             />
@@ -175,6 +173,7 @@
 
         android:layout_below="@id/relative_layout"
 
+
         >
 
         <LinearLayout
@@ -183,9 +182,8 @@
 
             android:layout_height="wrap_content"
 
-            android:orientation="horizontal"
+            android:orientation="horizontal">
 
-            >
 
             <Button
 
@@ -197,7 +195,16 @@
 
                 android:textSize="26dp"
 
+                android:background = "@drawable/custom_button"
+
                 android:layout_marginHorizontal="5dp" />
+
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="samsung.png" />-->
 
             <Button
 
@@ -208,6 +215,8 @@
                 android:layout_height="75dp"
 
                 android:textSize="26dp"
+
+                android:background = "@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -221,6 +230,8 @@
 
                 android:textSize="26dp"
 
+                android:background = "@drawable/custom_button"
+
                 android:layout_marginHorizontal="5dp" />
 
 
@@ -233,9 +244,7 @@
 
             android:layout_height="wrap_content"
 
-            android:orientation="horizontal"
-
-            >
+            android:orientation="horizontal">
 
             <Button
 
@@ -246,6 +255,8 @@
                 android:layout_height="75dp"
 
                 android:textSize="26dp"
+
+                android:background = "@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -259,6 +270,8 @@
 
                 android:textSize="26dp"
 
+                android:background = "@drawable/custom_button"
+
                 android:layout_marginHorizontal="5dp" />
 
             <Button
@@ -270,6 +283,8 @@
                 android:layout_height="75dp"
 
                 android:textSize="26dp"
+
+                android:background = "@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -295,6 +310,8 @@
 
                 android:textSize="26dp"
 
+                android:background = "@drawable/custom_button"
+
                 android:layout_marginHorizontal="5dp" />
 
             <Button
@@ -307,6 +324,8 @@
 
                 android:textSize="26dp"
 
+                android:background = "@drawable/custom_button"
+
                 android:layout_marginHorizontal="5dp" />
 
             <Button
@@ -318,6 +337,8 @@
                 android:layout_height="75dp"
 
                 android:textSize="26dp"
+
+                android:background = "@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -385,8 +406,8 @@
 
         android:textSize="26dp"
 
+        android:backgroundTint="#CD5C5C"
 
-
-        android:backgroundTint="#CD5C5C"/>
+        />
 
 </RelativeLayout>
