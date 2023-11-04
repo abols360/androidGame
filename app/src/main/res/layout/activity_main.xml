@@ -16,7 +16,7 @@
 
     android:layout_margin="20dp"
 
-    android:background="@drawable/bg"    >
+    android:background ="@drawable/bg">
 
     <TextView
 
@@ -185,7 +185,7 @@
             android:orientation="horizontal">
 
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn0"
 
@@ -195,7 +195,7 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -206,7 +206,7 @@
 <!--                android:layout_height="wrap_content"-->
 <!--                android:src="samsung.png" />-->
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn1"
 
@@ -216,11 +216,12 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
+
 
                 android:layout_marginHorizontal="5dp" />
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn2"
 
@@ -230,7 +231,7 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -246,7 +247,7 @@
 
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn3"
 
@@ -256,11 +257,11 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn4"
 
@@ -270,11 +271,13 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:layout_marginHorizontal="5dp"
 
-                android:layout_marginHorizontal="5dp" />
 
-            <Button
+                android:background="@drawable/custom_button"
+                />
+
+            <ImageButton
 
                 android:id="@+id/btn5"
 
@@ -284,7 +287,7 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
@@ -300,7 +303,7 @@
 
             >
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn6"
 
@@ -310,11 +313,11 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn7"
 
@@ -324,11 +327,11 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/btn8"
 
@@ -338,10 +341,9 @@
 
                 android:textSize="26dp"
 
-                android:background = "@drawable/custom_button"
+                android:background="@drawable/custom_button"
 
                 android:layout_marginHorizontal="5dp" />
-
 
 
         </LinearLayout>
@@ -373,21 +375,12 @@
     <Button
 
         android:id="@+id/btn_play_again"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_below="@id/textStatus"
-
         android:layout_centerHorizontal="true"
-
         android:text="Play Again"
-
         android:textSize="26dp"
-
-
-
         android:backgroundTint="#ffbb00"/>
 
     <Button
@@ -406,8 +399,11 @@
 
         android:textSize="26dp"
 
-        android:backgroundTint="#CD5C5C"
+        android:backgroundTint="#bb5C5C"
 
         />
 
+
+
 </RelativeLayout>
+

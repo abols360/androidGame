@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#3B37CD1B</color>
+
+    <color name="yellow">#EFC700</color>
+
+
+<!--    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">-->
+<!--&lt;!&ndash;        <stroke android:color="#EFC700" android:width="5dp"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <solid android:color= "#9947CF2E"/>&ndash;&gt;-->
+<!--        <solid name="my_custom_color">#9947CF2E</solid>-->
+
+<!--    </shape>-->
 </resources>
