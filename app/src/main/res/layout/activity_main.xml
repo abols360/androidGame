@@ -99,6 +99,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn0"
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
@@ -107,6 +108,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn1"
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
@@ -115,6 +117,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn2"
                 android:layout_marginHorizontal="5dp" />
         </LinearLayout>
 
@@ -129,6 +132,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn3"
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
@@ -137,6 +141,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:layout_marginHorizontal="5dp"
+                android:tag="btn4"
                 android:background="@drawable/custom_button"/>
 
             <ImageButton
@@ -145,6 +150,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn5"
                 android:layout_marginHorizontal="5dp" />
 
         </LinearLayout>
@@ -160,6 +166,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn6"
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
@@ -168,6 +175,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn7"
                 android:layout_marginHorizontal="5dp" />
 
             <ImageButton
@@ -176,6 +184,7 @@
                 android:layout_height="75dp"
                 android:textSize="26dp"
                 android:background="@drawable/custom_button"
+                android:tag="btn8"
                 android:layout_marginHorizontal="5dp" />
         </LinearLayout>
 

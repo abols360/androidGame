@@ -7,8 +7,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
@@ -24,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean playerOneActive;
     private TextView playerOneScore, playerTwoScore, playerStatus;
     private ImageButton[] buttons = new ImageButton[9];
+
     private Button reset, playagain, rules;
-    boolean isButtonPressed = false;
     int[] gameState = {2,2,2,2,2,2,2,2,2};
     int[][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6},
             {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView textView;
     Button resetButton;
+
+    private ImageButton[] imageBackup;
     private int playerOneScoreCount, playerTwoScoreCount;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         playerOneScore = findViewById(R.id.score_Player1);
         playerTwoScore = findViewById(R.id.score_Player2);
-//        playerStatus = findViewById(R.id.textStatus);
         reset = findViewById(R.id.btn_reset);
         playagain = findViewById(R.id.btn_play_again);
         rules = findViewById(R.id.btn_rules);
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttons[6] = findViewById(R.id.btn6);
         buttons[7] = findViewById(R.id.btn7);
         buttons[8] = findViewById(R.id.btn8);
+
         for(int i=0; i<buttons.length; i++)
         {
             buttons[i].setOnClickListener(this);
@@ -62,35 +66,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerTwoScoreCount = 0;
         playerOneActive = true;
         rounds = 0;
-        rules.setOnClickListener(new View.OnClickListener() {
+        rules.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 // Create and configure the alert dialog
                 ShowRulesAlert();
             }
         });
     }
 
-
     @Override
     public void onClick(View view)
     {
-//        if(view.drawable != null)
-//        {
-//            return;
-//        }
         if(checkWinner())
         {
             return;
         }
-        String buttonID  = view.getResources().getResourceEntryName(view.getId());
+        String buttonID = view.getResources().getResourceEntryName(view.getId());
         int gameStatePointer = Integer.parseInt(buttonID.substring(buttonID.length()-1,buttonID.length()));
+        String backgroundImageName = (String) view.getTag();
 
-//        ImageButton imageButton1 = findViewById(R.id.btn0);
-//        int currentImageResource = (int) imageButton1.getTag();
+        for(int i=0; i<buttons.length; i++)
+        {
+            if (buttons[i].getTag() == backgroundImageName)
+            {
+                Log.e("SomeBug", String.valueOf(buttons[i]));
+                buttons[i].setOnClickListener(null);
+            }
+        }
 
-//        if (!isButtonPressed);
-//        {
+        if(gameStatePointer != 0 || gameStatePointer != 1)
+        {
             if(playerOneActive)
             {
                 ((ImageButton)view).setBackgroundResource(R.drawable.samsung);
@@ -102,8 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 gameState[gameStatePointer] = 1;
             }
             rounds++;
-            isButtonPressed = true;
-//        }
+        }
 
         if(checkWinner())
         {
@@ -147,12 +154,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        playagain.setOnClickListener(new View.OnClickListener() {
+        playagain.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
-                //((ImageButton)view).setBackgroundResource(R.drawable.custom_button);
                 playAgain();
-             //   ((ImageButton)view).setBackgroundResource(R.drawable.custom_button);
                 for(int i=0; i<buttons.length; i++)
                 {
                     buttons[i].setBackgroundResource(R.drawable.custom_button);
@@ -160,7 +166,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        rules.setOnClickListener(new View.OnClickListener() {
+        rules.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 // Create and configure the alert dialog
@@ -192,21 +199,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i=0; i<buttons.length; i++)
         {
             gameState[i] = 2;
+            buttons[i].setOnClickListener(this);
         }
-//        playerStatus.setText("Status");
     }
 
     private void ShowWinnerAlert(String winner)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("We have winner")
-                .setMessage(winner + " has won.")
-                .setPositiveButton("Cool!", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                    }
-                });
+            .setMessage(winner + " has won.")
+            .setPositiveButton("Cool!", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                }
+            });
 
         // Show the alert dialog
         AlertDialog alertDialog = builder.create();
@@ -217,13 +224,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Rules")
-                .setMessage("There will be some rules. ...")
-                .setPositiveButton("Let's go!", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // You can add code here to handle the OK button click.
-                    }
-                });
+            .setMessage("There will be some rules. ...")
+            .setPositiveButton("Let's go!", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // You can add code here to handle the OK button click.
+                }
+            });
 
         // Show the alert dialog
         AlertDialog alertDialog = builder.create();
