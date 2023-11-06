@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerOneScore = findViewById(R.id.score_Player1);
         playerTwoScore = findViewById(R.id.score_Player2);
         reset = findViewById(R.id.btn_reset);
+        playerStatus = findViewById(R.id.textStatus);
         playagain = findViewById(R.id.btn_play_again);
         rules = findViewById(R.id.btn_rules);
         buttons[0] = findViewById(R.id.btn0);
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerTwoScoreCount = 0;
         playerOneActive = true;
         rounds = 0;
+
+        playerStatus.setText("Team Samsung starts!");
+
         rules.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -100,11 +104,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 ((ImageButton)view).setBackgroundResource(R.drawable.samsung);
                 gameState[gameStatePointer] = 0;
+                playerStatus.setText("It's team Apple turn!");
             }
             else
             {
                 ((ImageButton)view).setBackgroundResource(R.drawable.apple);
                 gameState[gameStatePointer] = 1;
+                playerStatus.setText("It's team Samsung turn!");
             }
             rounds++;
         }
@@ -115,20 +121,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 playerOneScoreCount++;
                 updatePlayerScore();
-//                playerStatus.setText("Samsung has won");
+                playerStatus.setText("Team Samsung has won!");
                 ShowWinnerAlert("Samsung");
             }
             else
             {
                 playerTwoScoreCount++;
                 updatePlayerScore();
-//                playerStatus.setText("Apple has won");
+                playerStatus.setText("Team Apple has won!");
                 ShowWinnerAlert("Apple");
             }
         }
         else if(rounds==9)
         {
-//            playerStatus.setText("No Winner");
+            playerStatus.setText("Friendship has won!");
             ShowWinnerAlert("Friendship");
         }
         else
@@ -200,13 +206,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             buttons[i].setOnClickListener(this);
             playerOneActive = !playerOneActive;
         }
+        if (playerOneActive == true)
+        {
+            playerStatus.setText("Team Samsung starts!");
+        }
+        else
+        {
+            playerStatus.setText("Team Apple starts!");
+        }
     }
 
     private void ShowWinnerAlert(String winner)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("We have winner")
-            .setMessage(winner + " has won.")
+        builder.setTitle("We have winner!")
+            .setMessage(winner + " has won!")
             .setPositiveButton("Cool!", new DialogInterface.OnClickListener()
             {
                 @Override
@@ -224,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Rules")
-            .setMessage("There will be some rules. ...")
+            .setMessage("Choose your team - Apple or Samsung. Tap the squares to reveal a logo. Player from the other team then gets to make a turn and tap one of the squares revealing its logo. The first player to get 3 of his logos in a row - up, down, across or diagonally - is the WINNER!")
             .setPositiveButton("Let's go!", new DialogInterface.OnClickListener()
             {
                 @Override
