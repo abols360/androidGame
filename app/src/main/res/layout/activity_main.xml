@@ -214,7 +214,7 @@
         android:layout_centerHorizontal="true"
         android:text="Reset total score"
         android:textSize="26dp"
-        android:backgroundTint="#bb5C5C"
+        android:backgroundTint="#750D37"
         />
 
     <Button

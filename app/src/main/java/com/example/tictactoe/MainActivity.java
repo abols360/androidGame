@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
     int rounds;
 
-    TextView textView;
-    Button resetButton;
-
     private ImageButton[] imageBackup;
     private int playerOneScoreCount, playerTwoScoreCount;
     @Override
@@ -157,7 +154,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playagain.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 playAgain();
                 for(int i=0; i<buttons.length; i++)
                 {
@@ -169,7 +167,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rules.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 // Create and configure the alert dialog
                 ShowRulesAlert();
             }
@@ -195,11 +194,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void playAgain()
     {
         rounds = 0;
-        playerOneActive = true;
         for (int i=0; i<buttons.length; i++)
         {
             gameState[i] = 2;
             buttons[i].setOnClickListener(this);
+            playerOneActive = !playerOneActive;
         }
     }
 
@@ -208,7 +207,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("We have winner")
             .setMessage(winner + " has won.")
-            .setPositiveButton("Cool!", new DialogInterface.OnClickListener() {
+            .setPositiveButton("Cool!", new DialogInterface.OnClickListener()
+            {
                 @Override
                 public void onClick(DialogInterface dialog, int which)
                 {
@@ -225,13 +225,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Rules")
             .setMessage("There will be some rules. ...")
-            .setPositiveButton("Let's go!", new DialogInterface.OnClickListener() {
+            .setPositiveButton("Let's go!", new DialogInterface.OnClickListener()
+            {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // You can add code here to handle the OK button click.
+                public void onClick(DialogInterface dialog, int which)
+                {
+
                 }
             });
-
         // Show the alert dialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
