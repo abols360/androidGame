@@ -1,9 +1,5 @@
 # androidGame
 
-Useful links: 
-
-https://www.youtube.com/watch?v=uri1QHolQT8&ab_channel=BrainOnCode
-
-https://www.youtube.com/watch?v=NyUbptjoqb8&ab_channel=AllCodingTutorials
-
-https://www.youtube.com/watch?v=4kvhvcv1-uA&t=24s&ab_channel=AndroidKnowledge
+Here is created Tic-Tac-Toe games special edition Samsung vs Apple.
+Main difference is that, insted of using "X" and "O" there will be Samsung and Apple logo.
+Game is created in java language. 

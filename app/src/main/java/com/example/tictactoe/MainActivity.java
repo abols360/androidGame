@@ -26,14 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean playerOneActive;
     private TextView playerOneScore, playerTwoScore, playerStatus;
     private ImageButton[] buttons = new ImageButton[9];
-
     private Button reset, playagain, rules;
     int[] gameState = {2,2,2,2,2,2,2,2,2};
-    int[][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6},
-            {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
+    int[][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
     int rounds;
-
-    private ImageButton[] imageBackup;
     private int playerOneScoreCount, playerTwoScoreCount;
     @Override
     protected void onCreate(Bundle savedInstanceState)
