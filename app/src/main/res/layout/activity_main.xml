@@ -241,7 +241,6 @@
         android:textSize="26dp" />
 
     <Button
-
         android:id="@+id/btn_rules"
         android:layout_width="232dp"
         android:layout_height="67dp"
@@ -254,7 +253,6 @@
         android:backgroundTint="#0C1821"
         android:text="Rules"
         android:textSize="26dp" />
-
 
 </RelativeLayout>
 
